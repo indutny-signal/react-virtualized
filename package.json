@@ -1,14 +1,15 @@
 {
-  "name": "react-virtualized",
+  "name": "@indutny/react-virtualized",
   "description": "React components for efficiently rendering large, scrollable lists and tabular data",
   "author": "Brian Vaughn <brian.david.vaughn@gmail.com>",
   "user": "bvaughn",
-  "version": "9.22.3",
-  "homepage": "https://github.com/bvaughn/react-virtualized",
+  "version": "9.22.4",
+  "homepage": "https://github.com/indutny-signal/react-virtualized",
   "main": "dist/commonjs/index.js",
   "module": "dist/es/index.js",
   "jsnext:main": "dist/es/index.js",
   "license": "MIT",
+  "types": "index.d.ts",
   "scripts": {
     "build:types": "flow-copy-source --ignore \"**/*.{jest,e2e,ssr,example}.js\" source/WindowScroller dist/es/WindowScroller && flow-copy-source --ignore \"**/*.{jest,e2e,ssr,example}.js\" source/AutoSizer dist/es/AutoSizer",
     "build": "yarn run build:commonjs && yarn run build:css && yarn run build:es && yarn run build:demo && yarn run build:umd",
@@ -27,7 +28,6 @@
     "typecheck": "flow check",
     "prettier": "prettier --write '{playground,source,docs}/**/*.{js,md}'",
     "prettier:diff": "prettier --list-different '{playground,source,docs}/**/*.{js,md}'",
-    "postpublish": "yarn run deploy",
     "prepublishOnly": "yarn run build",
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.dev.js",
     "test": "yarn run test:jest",
@@ -43,11 +43,13 @@
   },
   "files": [
     "dist",
-    "styles.css"
+    "types",
+    "styles.css",
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bvaughn/react-virtualized.git"
+    "url": "https://github.com/indutny-signal/react-virtualized.git"
   },
   "keywords": [
     "react",
@@ -67,7 +69,7 @@
     "spreadsheet"
   ],
   "bugs": {
-    "url": "https://github.com/bvaughn/react-virtualized/issues"
+    "url": "https://github.com/indutny-signal/react-virtualized/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
